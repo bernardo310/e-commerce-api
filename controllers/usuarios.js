@@ -10,7 +10,7 @@ exports.logIn = async (req, res) => {
         res.status(200).json({ status: "success", data: { token } });
     } catch (error) {
         console.log(error);
-        res.status(400).json({ status: "error", error: "Check the email address or password." });
+        res.status(400).json({ status: "error", error: "Correo o contraseña no válida" });
     }
 };
 

@@ -8,7 +8,7 @@ exports.getProductos = async (req, res, next) => {
         const productos = await Productos.readProductos({ nombre, sku, minPrecio, maxPrecio, limite, pagina })
         res.send({ data: productos });
     } catch (error) {
-        res.status(500).send(error);
+        res.status(400).json({ status: "error", error });
         next(error);
     }
 }

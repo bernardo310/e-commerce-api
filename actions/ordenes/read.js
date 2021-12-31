@@ -22,6 +22,9 @@ const readOrdenes = async ({ idUsuario }) => {
         }],
         raw: true
     })
+
+    if(ordenes.length == 0) throw 'No se encontraron ordenes'
+
     //leer productos de cada orden
     let ordenesDetalle = []
     for (let orden of ordenes) {

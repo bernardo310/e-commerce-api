@@ -27,6 +27,9 @@ const readProductos = async ({ nombre, sku, minPrecio, maxPrecio, limite = 100, 
         where,
     });
 
+    //validar que hayan productos
+    if(numProductos == 0) throw 'No se encontraron productos'
+
     //validar que no sean 0
     if (limite == 0) limite = 15
     if (pagina == 0) pagina = 1
